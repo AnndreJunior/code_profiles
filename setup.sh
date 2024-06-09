@@ -55,7 +55,7 @@ create_cs_profile() {
     }')
     CS_EXTENSIONS=(
         "${COMMON_EXTENSIONS[@]}"
-        "ms-dotnettools.csharp"
+        "ms-dotnettools.csdevkit"
         "kreativ-software.csharpextensions"
         "k--kato.docomment"
         "cweijan.vscode-database-client2"
