@@ -59,6 +59,7 @@ create_cs_profile() {
         "kreativ-software.csharpextensions"
         "k--kato.docomment"
         "cweijan.vscode-database-client2"
+        "patcx.vscode-nuget-gallery" 
     )
 
     create_profile "$CS_PROFILE_NAME" "$CS_SETTINGS_JSON" "${CS_EXTENSIONS[@]}"
@@ -78,7 +79,8 @@ create_node_profile() {
             "tsconfig.json": "tsconfig.*.json",
             "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
             "*.component.ts": "${capture}.component.html, ${capture}.component.scss, ${capture}.component.scss, ${capture}.component.ts, ${capture}.component.css, ${capture}.component.spec.ts"
-        }
+        },
+        "editor.tabSize": 2
     }')
 
     NODE_EXTENSIONS=(
