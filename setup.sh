@@ -8,6 +8,7 @@ COMMON_SETTINGS_JSON='{
         "editor.formatOnSave": true,
 
         "editor.fontFamily": "JetBrains Mono",
+        "terminal.integrated.fontFamily": "CodeNewRoman Nerd Font Mono",
         "explorer.fileNesting.enabled": true,
         "editor.minimap.enabled": false,
         "explorer.compactFolders": false,
