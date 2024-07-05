@@ -95,22 +95,37 @@ create_node_profile() {
     create_profile "$NODE_PROFILE_NAME" "$NODE_SETTINGS_JSON" "${NODE_EXTENSIONS[@]}"
 }
 
+create_python_profile() {
+    PYTHON_PROFILE_NAME="py"
+    PYTHON_SETTINGS_JSON=$(echo "$COMMON_SETTINGS_JSON")
+    PYTHON_EXTENSIONS=(
+        "${COMMON_EXTENSIONS[@]}"
+        "ms-python.python"
+    )
+
+    create_profile "$PYTHON_PROFILE_NAME" "$PYTHON_SETTINGS_JSON" "${PYTHON_EXTENSIONS[@]}"
+}
+
 create_profile_command_alias() {
     CS_PROFILE_CODE_ALIAS='alias code-cs="code --extensions-dir $HOME/code_profiles/cs/exts --user-data-dir $HOME/code_profiles/cs/data"'
     NODE_PROFILE_CODE_ALIAS='alias code-node="code --extensions-dir $HOME/code_profiles/node/exts --user-data-dir $HOME/code_profiles/node/data"'
+    PYTHON_PROFILE_CODE_ALIAS='alias code-node="code --extensions-dir $HOME/code_profiles/py/exts --user-data-dir $HOME/code_profiles/py/data"'
 
     if [[ "$SHELL" == "/usr/bin/zsh" ]]; then
         grep -Fxq "$CS_PROFILE_CODE_ALIAS" "$HOME/.zshrc" || echo "$CS_PROFILE_CODE_ALIAS" >> "$HOME/.zshrc"
         grep -Fxq "$NODE_PROFILE_CODE_ALIAS" "$HOME/.zshrc" || echo "$NODE_PROFILE_CODE_ALIAS" >> "$HOME/.zshrc"
+        grep -Fxq "$PYTHON_PROFILE_CODE_ALIAS" "$HOME/.zshrc" || echo "$PYTHON_PROFILE_CODE_ALIAS" >> "$HOME/.zshrc"
         exec zsh
     elif [[ "$SHELL" == "/user/bin/bash" ]]; then
         grep -Fxq "$CS_PROFILE_CODE_ALIAS" "$HOME/.bashrc" || echo "$CS_PROFILE_CODE_ALIAS" >> "$HOME/.bashrc"
         grep -Fxq "$NODE_PROFILE_CODE_ALIAS" "$HOME/.bashrc" || echo "$NODE_PROFILE_CODE_ALIAS" >> "$HOME/.bashrc"
+        grep -Fxq "$PYTHON_PROFILE_CODE_ALIAS" "$HOME/.bashrc" || echo "$PYTHON_PROFILE_CODE_ALIAS" >> "$HOME/.bashrc"
         exec bash
     else
         echo "Arquivo de perfil não encontrado, adicione as linhas a baixo manualmente"
         echo "$CS_PROFILE_CODE_ALIAS"
         echo "$NODE_PROFILE_CODE_ALIAS"
+        echo "$PYTHON_PROFILE_CODE_ALIAS"
     fi
 }
 
@@ -129,6 +144,7 @@ main() {
     
     create_cs_profile
     create_node_profile
+    create_python_profile
     
     create_profile_command_alias
 }
