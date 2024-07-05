@@ -110,6 +110,7 @@ create_profile_command_alias() {
     else
         echo "Arquivo de perfil não encontrado, adicione as linhas a baixo manualmente"
         echo "$CS_PROFILE_CODE_ALIAS"
+        echo "$NODE_PROFILE_CODE_ALIAS"
     fi
 }
 
