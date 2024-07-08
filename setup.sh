@@ -61,6 +61,7 @@ create_cs_profile() {
         "k--kato.docomment"
         "cweijan.vscode-database-client2"
         "patcx.vscode-nuget-gallery" 
+        "adrianwilczynski.asp-net-core-switcher"
     )
 
     create_profile "$CS_PROFILE_NAME" "$CS_SETTINGS_JSON" "${CS_EXTENSIONS[@]}"
