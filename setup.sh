@@ -62,6 +62,8 @@ create_cs_profile() {
         "cweijan.vscode-database-client2"
         "patcx.vscode-nuget-gallery" 
         "adrianwilczynski.asp-net-core-switcher"
+        "DominicVonk.vscode-resx-editor"
+        "AnndreJunior.resx-designer-generator"
     )
 
     create_profile "$CS_PROFILE_NAME" "$CS_SETTINGS_JSON" "${CS_EXTENSIONS[@]}"
