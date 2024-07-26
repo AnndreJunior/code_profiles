@@ -22,6 +22,7 @@ COMMON_EXTENSIONS=(
     "eamodio.gitlens"
     "miguelsolorio.min-theme"
     "miguelsolorio.symbols"
+    "humao.rest-client"
 )
 
 create_profile() {
@@ -59,8 +60,7 @@ create_cs_profile() {
         "ms-dotnettools.csdevkit"
         "kreativ-software.csharpextensions"
         "k--kato.docomment"
-        "cweijan.vscode-database-client2"
-        "patcx.vscode-nuget-gallery" 
+        "cweijan.vscode-database-client2" 
         "adrianwilczynski.asp-net-core-switcher"
         "DominicVonk.vscode-resx-editor"
         "AnndreJunior.resx-designer-generator"
