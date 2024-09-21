@@ -58,12 +58,9 @@ create_cs_profile() {
     CS_EXTENSIONS=(
         "${COMMON_EXTENSIONS[@]}"
         "ms-dotnettools.csdevkit"
-        "kreativ-software.csharpextensions"
         "k--kato.docomment"
         "cweijan.vscode-database-client2" 
         "adrianwilczynski.asp-net-core-switcher"
-        "DominicVonk.vscode-resx-editor"
-        "AnndreJunior.resx-designer-generator"
     )
 
     create_profile "$CS_PROFILE_NAME" "$CS_SETTINGS_JSON" "${CS_EXTENSIONS[@]}"
